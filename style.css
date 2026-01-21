@@ -1,0 +1,17 @@
+.content_wrapper {
+  display: flex;
+
+  gap: 2px;
+}
+
+.content_section {
+  width: calc(100% - 308px);
+  padding: 16px;
+  border: 2px solid green;
+  background-color: blueviolet;
+}
+
+.content {
+  width: 100%;
+  background-color: blue;
+}
