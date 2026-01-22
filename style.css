@@ -7,7 +7,7 @@
 /* Header*/
 .header_wrapper {
   position: absolute;
-  z-index: 10;
+  z-index: 9;
   width: 100%;
   background-color: #e76c1f;
 }
