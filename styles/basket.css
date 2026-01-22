@@ -10,7 +10,7 @@
 
 .basket {
   width: 100%;
-  height: 400px;
+
   position: sticky;
   top: 0;
   display: flex;
@@ -26,6 +26,7 @@ h3 {
 .basket_card {
   background-color: #fdeadc;
   border-radius: 15px;
+  margin-bottom: 10px;
 }
 
 .basked_text {
@@ -49,4 +50,59 @@ h3 {
   justify-content: center;
   align-items: center;
   padding-bottom: 10px;
+}
+
+.busket_subtotal {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  gap: 100px;
+  padding-bottom: 10px;
+}
+
+.busket_delivery_fee {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  gap: 100px;
+  padding-bottom: 20px;
+}
+
+.line {
+  border: 2px solid white;
+  margin-bottom: 10px;
+}
+
+.busket_total_price {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  gap: 100px;
+  padding-bottom: 20px;
+}
+
+.busket_buy_now {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_buy_now {
+  width: 250px;
+  height: 64px;
+  background-color: #e76c1f;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  border: none;
+  margin-bottom: 10px;
 }
