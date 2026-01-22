@@ -6,6 +6,8 @@
 
 /* Header*/
 .header_wrapper {
+  position: absolute;
+  z-index: 10;
   width: 100%;
   background-color: #e76c1f;
 }
@@ -23,6 +25,7 @@
   width: 100%;
   height: 500px;
   object-fit: cover;
+  margin-top: 50px;
 }
 
 .hero_wrapper {
@@ -34,7 +37,7 @@
   width: 200px;
   height: 200px;
   position: absolute; /* Nimmt das Bild aus dem normalen Fluss */
-  top: 480px; /* Positioniert das Bild vertikal */
+  top: 520px; /* Positioniert das Bild vertikal */
   left: 50%; /* Positioniert das Bild horizontal */
   transform: translate(-50%, -50%); /* Zentriert das Bild */
   z-index: 10; /* Stellt sicher, dass es über den Divs liegt */
@@ -110,7 +113,6 @@
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  padding-left: 167px;
 }
 
 .orange_stripe_img {
@@ -120,7 +122,6 @@
 }
 
 .orange_stripe_slogan {
-  padding-right: 300px;
   color: white;
   font-size: 40px;
 }
@@ -176,6 +177,8 @@
 
 .meal_card_content {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
   padding-bottom: 10px;
 }
 
@@ -209,7 +212,8 @@ h4 {
 
 .meal_card_content_btn {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn {
