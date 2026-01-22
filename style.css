@@ -1,17 +1,254 @@
+/* Root*/
+
+.container {
+  max-width: 1440px;
+}
+
+/* Header*/
+.header_wrapper {
+  width: 100%;
+  background-color: #e76c1f;
+}
+
+.header_wrapper_inner {
+  height: 128px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 120px;
+  padding-right: 48px;
+}
+
+.hero_img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.hero_wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.bürger_logo {
+  width: 200px;
+  height: 200px;
+  position: absolute; /* Nimmt das Bild aus dem normalen Fluss */
+  top: 480px; /* Positioniert das Bild vertikal */
+  left: 50%; /* Positioniert das Bild horizontal */
+  transform: translate(-50%, -50%); /* Zentriert das Bild */
+  z-index: 10; /* Stellt sicher, dass es über den Divs liegt */
+  max-width: 100%; /* Bild passt sich Container an */
+}
+.hero_content {
+  display: flex;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.slogan_orange {
+  color: #e76c1f;
+  font-size: 48px;
+}
+.slogan_black {
+  color: black;
+  font-size: 48px;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: 10px;
+  gap: 5px;
+  background-color: #facaac;
+  padding: 5px 5px;
+}
+
+.star {
+  width: 24px;
+  height: 24px;
+}
+
+.rating_inner {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating_bewertung {
+  color: black;
+  font-weight: bold;
+}
+
+.rating_anzahl {
+  color: grey;
+}
+
+.hero_text {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+
+/* bürger section */
+
+.burger_section {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+}
+.orange_stripe {
+  width: 100%;
+  height: 60px;
+  background-color: #e76c1f;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding-left: 167px;
+}
+
+.orange_stripe_img {
+  width: 88px;
+  height: 91px;
+  padding-bottom: 10px;
+}
+
+.orange_stripe_slogan {
+  padding-right: 300px;
+  color: white;
+  font-size: 40px;
+}
+
+/* Pizza section */
+.pizza_section {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* salat section */
+
+.salat_section {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Meal */
 .content_wrapper {
   display: flex;
-
   gap: 2px;
 }
 
 .content_section {
   width: calc(100% - 308px);
   padding: 16px;
-  border: 2px solid green;
-  background-color: blueviolet;
 }
 
 .content {
-  width: 100%;
-  background-color: blue;
+  width: 80%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 10px 10px 10px;
+  background-color: #fdeadc;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.meal_card_img {
+  width: 207px;
+  height: 121px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.meal_card_content {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.meal_card_content_left {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+.meal_card_content_left_span {
+  font-size: 16px;
+}
+
+.meal_card_content_right {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.meal_card_content_right_price {
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.meal_card_content_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: white;
+  border-radius: 40%;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  color: #e76c1f;
+  font-size: 16px;
+}
+
+.btn_plus {
+  background-color: white;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  color: #e76c1f;
+  font-size: 16px;
+}
+
+/* footer */
+
+.footer_wrapper {
+  background-color: #e76c1f;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer_content {
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer_content_left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
