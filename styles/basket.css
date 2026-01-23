@@ -1,16 +1,17 @@
 .basket_wrapper {
+  z-index: 3;
   width: 300px;
   flex-grow: 1;
-
+  height: 800px;
   padding: 16px;
   background-color: #363534;
-  border-top-left-radius: 8%;
-  border-bottom-left-radius: 8%;
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
 }
 
 .basket {
   width: 100%;
-
+  z-index: 3;
   position: sticky;
   top: 0;
   display: flex;
@@ -18,18 +19,22 @@
   flex-direction: column;
 }
 h3 {
+  z-index: 3;
   font-size: 32px;
   color: #fdeadc;
   padding-top: 30px;
   padding-bottom: 20px;
 }
 .basket_card {
+  width: 100%;
+  z-index: 3;
   background-color: #fdeadc;
   border-radius: 15px;
   margin-bottom: 10px;
 }
 
 .basked_text {
+  z-index: 3;
   font-size: 22px;
   padding-left: 10px;
   padding-right: 10px;
@@ -38,6 +43,7 @@ h3 {
 }
 
 .basket_icon_price {
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +52,7 @@ h3 {
 }
 
 .basked_delet {
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,6 +60,7 @@ h3 {
 }
 
 .busket_subtotal {
+  z-index: 3;
   width: 100%;
   color: white;
   display: flex;
@@ -63,6 +71,7 @@ h3 {
 }
 
 .busket_delivery_fee {
+  z-index: 3;
   width: 100%;
   color: white;
   display: flex;
@@ -73,11 +82,13 @@ h3 {
 }
 
 .line {
+  z-index: 3;
   border: 2px solid white;
   margin-bottom: 10px;
 }
 
 .busket_total_price {
+  z-index: 3;
   width: 100%;
   color: white;
   display: flex;
@@ -88,21 +99,20 @@ h3 {
 }
 
 .busket_buy_now {
+  z-index: 3;
   display: flex;
   justify-content: center;
 }
 
 .btn_buy_now {
-  width: 250px;
+  z-index: 3;
+  width: 255px;
   height: 64px;
   background-color: #e76c1f;
   color: white;
   font-weight: bold;
   font-size: 28px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 50px;
+  border-radius: 45px;
   border: none;
   margin-bottom: 10px;
 }

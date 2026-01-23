@@ -1,45 +1,11 @@
 let myDishes = [
   {
-    "name": "Spaghetti Carbonara",
-    "price": 12.99,
-    "description": "Cremige Pasta mit Speck und Parmesan",
-    "amount": 0,
-    "category": "Pasta",
-  },
-  {
-    "name": "Penne Arrabiata",
-    "price": 10.99,
-    "description": "Scharfe Tomatensauce mit Knoblauch und Chili",
-    "amount": 0,
-    "category": "Pasta",
-  },
-  {
-    "name": "Tagliatelle Lachs",
-    "price": 13.99,
-    "description": "Bandnudeln mit frischem Lachs in Sahnesauce",
-    "amount": 0,
-    "category": "Pasta",
-  },
-  {
-    "name": "Lasagne al Forno",
-    "price": 11.99,
-    "description": "Hausgemachte Lasagne mit Hackfleisch und Käse",
-    "amount": 0,
-    "category": "Pasta",
-  },
-  {
-    "name": "Spaghetti Pesto",
-    "price": 9.99,
-    "description": "Spaghetti mit frischem Basilikum-Pesto",
-    "amount": 0,
-    "category": "Pasta",
-  },
-  {
     "name": "Pizza Margherita",
     "price": 9.99,
     "description": "Tomatensauce, Mozzarella und Basilikum",
     "amount": 0,
     "category": "Pizza",
+    "path": "/assets/img/pizza1.jpeg",
   },
   {
     "name": "Pizza Salami",
@@ -47,6 +13,7 @@ let myDishes = [
     "description": "Klassische Pizza mit würziger Salami",
     "amount": 0,
     "category": "Pizza",
+    "path": "/assets/img/pizza1.jpeg",
   },
   {
     "name": "Pizza Prosciutto",
@@ -54,6 +21,7 @@ let myDishes = [
     "description": "Pizza mit Schinken und Mozzarella",
     "amount": 0,
     "category": "Pizza",
+    "path": "/assets/img/pizza1.jpeg",
   },
   {
     "name": "Pizza Funghi",
@@ -61,6 +29,7 @@ let myDishes = [
     "description": "Pizza mit frischen Champignons",
     "amount": 0,
     "category": "Pizza",
+    "path": "/assets/img/pizza1.jpeg",
   },
   {
     "name": "Pizza Quattro Formaggi",
@@ -68,6 +37,7 @@ let myDishes = [
     "description": "Vier Käsesorten auf knusprigem Boden",
     "amount": 0,
     "category": "Pizza",
+    "path": "/assets/img/pizza1.jpeg",
   },
   {
     "name": "Classic Burger",
@@ -75,6 +45,7 @@ let myDishes = [
     "description": "Rindfleisch, Salat, Tomate und Burgersauce",
     "amount": 0,
     "category": "Bürger",
+    "path": "/assets/img/burger1.jpeg",
   },
   {
     "name": "Cheeseburger",
@@ -82,6 +53,7 @@ let myDishes = [
     "description": "Classic Burger mit geschmolzenem Käse",
     "amount": 0,
     "category": "Bürger",
+    "path": "/assets/img/burger2.jpeg",
   },
   {
     "name": "Bacon Burger",
@@ -89,6 +61,7 @@ let myDishes = [
     "description": "Rindfleischburger mit knusprigem Bacon",
     "amount": 0,
     "category": "Bürger",
+    "path": "/assets/img/burger3.jpeg",
   },
   {
     "name": "Chicken Burger",
@@ -96,6 +69,7 @@ let myDishes = [
     "description": "Knuspriges Hähnchenfilet mit Salat",
     "amount": 0,
     "category": "Bürger",
+    "path": "/assets/img/burger4.jpeg",
   },
   {
     "name": "Veggie Burger",
@@ -103,6 +77,7 @@ let myDishes = [
     "description": "Pflanzlicher Burger mit frischem Gemüse",
     "amount": 0,
     "category": "Bürger",
+    "path": "/assets/img/burger1.jpeg",
   },
   {
     "name": "Caesar Salad",
@@ -110,6 +85,7 @@ let myDishes = [
     "description": "Römersalat mit Caesar-Dressing und Croutons",
     "amount": 0,
     "category": "Salat",
+    "path": "/assets/img/salad.jpeg",
   },
   {
     "name": "Gemischter Salat",
@@ -117,6 +93,7 @@ let myDishes = [
     "description": "Frischer Salat mit verschiedenen Gemüsesorten",
     "amount": 0,
     "category": "Salat",
+    "path": "/assets/img/sald2.jpeg",
   },
   {
     "name": "Hähnchen Salat",
@@ -124,6 +101,7 @@ let myDishes = [
     "description": "Salat mit gegrilltem Hähnchenbrustfilet",
     "amount": 0,
     "category": "Salat",
+    "path": "/assets/img/sald3.jpeg",
   },
   {
     "name": "Thunfisch Salat",
@@ -131,6 +109,7 @@ let myDishes = [
     "description": "Salat mit Thunfisch und roten Zwiebeln",
     "amount": 0,
     "category": "Salat",
+    "path": "/assets/img/sald4.jpeg",
   },
   {
     "name": "Mozzarella Tomaten Salat",
@@ -138,5 +117,8 @@ let myDishes = [
     "description": "Tomaten, Mozzarella und frisches Basilikum",
     "amount": 0,
     "category": "Salat",
+    "path": "/assets/img/salad.jpeg",
   },
 ];
+
+const costumOrder = [];

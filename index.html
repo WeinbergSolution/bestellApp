@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="shortcut icon" href="./assets/icons/takeout_dining_2.svg" type="image/x-icon">
     <script src="./scripts/db.js"></script>
+    <script src="./scripts/tamplate.js"></script>
    
-  <body>
+  <body onload="init()">
     <header>
 
       <div class="header_wrapper">
@@ -28,7 +29,7 @@
     </header>
       <div class="hero_wrapper">
         <div class="hero_picture">
-          <img class="hero_img" src="./assets/img/hero.png" alt="Hero picture Auswahl an speisen" >
+          <img class="hero_img" src="./assets/img/hero.jpeg" alt="Hero picture Auswahl an speisen" >
         </div>
     
         <img class="bürger_logo" src="./assets/icons/bürger_logo.svg" alt="Hero picture Auswahl an speisen" >
@@ -48,81 +49,27 @@
         <h2>The best of Burgers, Pizza, and Greens, all in one great place</h2>
         </div>
       </div>
-<div class="burger_section">
-  <div class="orange_stripe">
-    <img class="orange_stripe_img" src="./assets/icons/bürger_icon.svg" alt="bürger icon">
-    <span class="orange_stripe_slogan" >Burger & Sandwiches</span>
-  </div>
-</div>
-<div class="pizza_section">
-  <div class="orange_stripe">
-    <img class="orange_stripe_img" src="./assets/icons/Pizza_icon.svg" alt="bürger icon">
-    <span class="orange_stripe_slogan" >Pizza  (30cm)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  </div>
-</div>
-
-<div class="salad_section">
-  <div class="orange_stripe">
-    <img class="orange_stripe_img" src="./assets/icons/Salad_icon.svg" alt="bürger icon">
-    <span class="orange_stripe_slogan" >Salad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </span>
-  </div>
-</div>
 
 <!-- Meal -->
 
     <div class="content_wrapper">
-      <section  class="content_section">
-        <div class="content">
-         
-            <img class="meal_card_img" src="./assets/img/bürgerVeggi.jpg" alt="Bürger Bild Veggi">
-            <div class="meal_card_content">
-              <div class="meal_card_content_left">
-                <h4>Veggie mushroom black burger</h4>
-                <span class="meal_card_content_left_span">Mixed green salad, Tomatoes, Edamame, Mushrooms</span>
-                <div></div>
-              </div>
-              <div class="meal_card_content_right">
-                <div class="meal_card_content_right_price">
-                  <span>16,90$</span>
-                  </div>
-                <div class="meal_card_content_btn">
-                  <button id="addOne" class="btn">Added 1</button>
-                  <button class="btn_plus">+</button>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-          
-       
- 
-     </section>
+      <div class="content_section" id="dishes">
+      
+      
+      </div>
 
 <!-- Basket-->
 
       <section  class="basket_wrapper">
-        <div id="content_basket" class="basket">
+        <div  class="basket">
           <h3>Your Basket</h3>
-          <div class="basket_card">
-            <div class="basked_text">
-              <span>1 x Veggie mushroom black burger</span>
-            </div>
-            <div class="basket_icon_price">
-              <div class="basked_delet">
-                <img src="./assets/icons/delete.svg" alt="delete button">
-                <span>1</span>
-                 <span>+</span>
-              </div>
-              <span>16,90</span>
-            </div>
+          <div id="content_basket" class="basket_card">
+            
           </div>
-          <div>
+          <div id="basket_items">
           <div class="busket_subtotal">
             <span>Subtotal</span>
-            <span>36,70$</span>
+            <span>00,00$</span>
           </div>
           <div class="busket_delivery_fee">
           <span>Delivery free</span>
@@ -131,13 +78,13 @@
             <hr class="line">
             <div class="busket_total_price">
               <span>Total</span>
-              <span>41.69</span>
+              <span>00,00</span>
             </div>
             <div class="busket_buy_now">
-              <button class="btn_buy_now">Buy now (41.69$)</button>
+              <button class="btn_buy_now">Buy now (00,00$)</button>
             </div>
           </div>
-          
+         
           
         </div>
       </section>

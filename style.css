@@ -99,14 +99,20 @@
 /* bürger section */
 
 .burger_section {
+  width: 100vw;
+  flex-direction: column;
+  z-index: 2;
   width: 100%;
   height: 90px;
   background-color: white;
   display: flex;
-  align-items: flex-end;
+  margin-top: 30px;
 }
 .orange_stripe {
-  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 2;
+  width: 100vw;
   height: 60px;
   background-color: #e76c1f;
   display: flex;
@@ -116,33 +122,44 @@
 }
 
 .orange_stripe_img {
+  position: relative;
+  left: 220px;
+  z-index: 2;
   width: 88px;
   height: 91px;
   padding-bottom: 10px;
 }
 
 .orange_stripe_slogan {
+  position: relative;
+  left: 220px;
+  z-index: 2;
   color: white;
   font-size: 40px;
 }
 
 /* Pizza section */
 .pizza_section {
+  width: 100vw;
+  flex-direction: column;
+  z-index: 2;
   width: 100%;
   height: 90px;
   background-color: white;
   display: flex;
-  align-items: center;
 }
 
 /* salat section */
 
-.salat_section {
+.salad_section {
+  width: 100vw;
+  flex-direction: column;
+  z-index: 2;
   width: 100%;
   height: 90px;
   background-color: white;
   display: flex;
-  align-items: flex-end;
+  margin-top: 30px;
 }
 
 /* Meal */
@@ -153,7 +170,7 @@
 
 .content_section {
   width: calc(100% - 308px);
-  padding: 16px;
+  padding: 0 16px 16px 0px;
 }
 
 .content {
@@ -166,6 +183,8 @@
   background-color: #fdeadc;
   border-radius: 10px;
   gap: 10px;
+  margin-bottom: 15px;
+  margin-left: 16px;
 }
 
 .meal_card_img {
@@ -216,9 +235,21 @@ h4 {
   gap: 20px;
 }
 
+.btn_add_to_basket {
+  width: 115px;
+  height: 30px;
+  background-color: white;
+  border-radius: 45px;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .btn {
   background-color: white;
-  border-radius: 40%;
+  border-radius: 45px;
   border: none;
   padding: 5px 5px 5px 5px;
   color: #e76c1f;
