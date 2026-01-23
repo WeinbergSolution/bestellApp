@@ -1,8 +1,13 @@
 const contentSectionRef = document.getElementById("dishes");
 const contentRef = document.getElementById("content_dishes");
+const basektCardRef = document.getElementById("content_basket");
+let totalPrice = 0;
+let totalPricePlusDeleveryFee = 0;
 
 function init() {
+  getFromLocalStorage();
   renderSectionContent();
+  renderBasketItem();
 }
 
 function renderSectionContent() {
@@ -33,30 +38,64 @@ function changeMealBtnOnClick(index) {
   mealBtnRef.innerHTML = changeMealBtn();
   addToCostumOrderArray(index);
   addToLocalStorage(index);
-  renderBasketItem(index);
+  renderBasketItem();
 }
 
 function addToCostumOrderArray(index) {
   let newDish = {
-    name: myDishes[index].name,
-    description: myDishes[index].description,
-    price: myDishes[index].price,
-    amount: myDishes[index].amount + 1,
+    "name": myDishes[index].name,
+    "description": myDishes[index].description,
+    "price": myDishes[index].price,
+    "amount": myDishes[index].amount + 1,
+    "combinePrice": myDishes[index].amount + 1 * myDishes[index].price,
   };
   costumOrder.push(newDish);
-  console.log(newDish);
 }
 
-function renderBasketItem(index) {
-  const basektCardRef = document.getElementById("content_basket");
+function renderBasketItem() {
+  calculateTotalPrice();
   const baskeItemsref = document.getElementById("basket_items");
-  for (let i = index; i < costumOrder.length; i++) {
+  basektCardRef.innerHTML = "";
+  baskeItemsref.innerHTML = "";
+
+  for (let index = 0; index < costumOrder.length; index++) {
     basektCardRef.innerHTML += templateBasketItemCard(index);
-    baskeItemsref.innerHTML = tamplateBasketItems(index);
   }
+  baskeItemsref.innerHTML = tamplateBasketItems(
+    totalPrice,
+    totalPricePlusDeleveryFee,
+  );
 }
 
 function addToLocalStorage(index) {
   const myJSON = JSON.stringify(costumOrder);
   localStorage.setItem("costumOrder", myJSON);
 }
+
+function getFromLocalStorage() {
+  let myOrderArray = JSON.parse(localStorage.getItem("costumOrder"));
+  if (myOrderArray !== null) {
+    costumOrder = myOrderArray;
+  }
+}
+
+function calculateTotalPrice() {
+  totalPrice = 0;
+  for (let index = 0; index < costumOrder.length; index++) {
+    totalPrice += costumOrder[index].price;
+    console.log(totalPrice);
+  }
+  totalPricePlusDeleveryFee = totalPrice + 4.99;
+}
+
+function deleteF(index) {
+  costumOrder.splice;
+}
+
+function deleteCardItemBasket(index) {
+  costumOrder.splice(index, 1);
+  addToLocalStorage(index);
+  renderBasketItem();
+}
+
+function name(params) {}

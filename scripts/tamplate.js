@@ -5,7 +5,7 @@ function templateOrangeStripeBürger() {
    <section>
     <div class="burger_section">
   <div class="orange_stripe">
-    <img class="orange_stripe_img" src="./assets/icons/bürger_icon.svg" alt="bürger icon">
+    <img class="orange_stripe_img_burger" src="./assets/img/banner_burger-removebg-preview.png" alt="bürger icon">
     <span class="orange_stripe_slogan" >Burger & Sandwiches</span>
   </div>
     `;
@@ -16,7 +16,7 @@ function templateOrangeStripeSald() {
    <section>
     <div class="salad_section">
   <div class="orange_stripe">
-    <img class="orange_stripe_img" src="./assets/icons/Salad_icon.svg" alt="bürger icon">
+    <img class="orange_stripe_img_sald" src="./assets/img/sald_banner-removebg-preview.png" alt="bürger icon">
     <span class="orange_stripe_slogan" >Salad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </span>
@@ -30,7 +30,7 @@ function templateOrangeStripePizza() {
     <section>
         <div class="pizza_section">
             <div class="orange_stripe">
-                <img class="orange_stripe_img" src="./assets/icons/Pizza_icon.svg" alt="bürger icon">
+                <img class="orange_stripe_img" src="./assets/img/banner_pizza-removebg-preview.png" alt="bürger icon">
                 <span class="orange_stripe_slogan" >Pizza  (30cm)
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             </div>
@@ -65,8 +65,6 @@ function templateContentDishes(index) {
 }
 
 function templateBasketItemCard(index) {
-  console.log(index);
-
   return `
            
           <div class="basked_text">
@@ -74,25 +72,28 @@ function templateBasketItemCard(index) {
             </div>
             <div class="basket_icon_price">
               <div class="basked_delet">
-                <img src="./assets/icons/delete.svg" alt="delete button">
+                <img onclick="deleteCardItemBasket(${index})" src="./assets/icons/delete.svg" alt="delete button">
                 <span>1</span>
                  <span>+</span>
               </div>
               <span>${costumOrder[index].price}</span>
             </div>
-             <div id="basket_items">
+             
           
          
           
     `;
 }
 
-function tamplateBasketItems(index) {
+function tamplateBasketItems(totalPrice, totalPricePlusDeleveryFee) {
+  console.log(totalPrice);
+  console.log(totalPricePlusDeleveryFee);
+
   return `
-    
+    <div id="basket_items">
         <div class="busket_subtotal">
             <span>Subtotal</span>
-            <span>${costumOrder[index].price}</span>
+            <span>${totalPrice.toFixed(2)}</span>
           </div>
           <div class="busket_delivery_fee">
           <span>Delivery free</span>
@@ -101,10 +102,10 @@ function tamplateBasketItems(index) {
             <hr class="line">
             <div class="busket_total_price">
               <span>Total</span>
-              <span>${costumOrder[index].price + 4.99}</span>
+              <span>${totalPricePlusDeleveryFee.toFixed(2)}</span>
             </div>
             <div class="busket_buy_now">
-              <button class="btn_buy_now">Buy now (${costumOrder[index].price + 4.99})</button>
+              <button class="btn_buy_now">Buy now (${totalPricePlusDeleveryFee.toFixed(2)})</button>
             </div>
           </div>
     `;
