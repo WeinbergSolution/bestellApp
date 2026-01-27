@@ -117,7 +117,7 @@ let myDishes = [
     "description": "Tomaten, Mozzarella und frisches Basilikum",
     "amount": 0,
     "category": "Salat",
-    "path": "./assets/img/salad_mozarella.jpeg",
+    "path": "./assets/img/salad_thunfisch.jpeg",
   },
 ];
 

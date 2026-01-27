@@ -1,19 +1,21 @@
 .basket_wrapper {
+  position: sticky;
+  top: 120px;
   z-index: 3;
   width: 300px;
   flex-grow: 1;
-  height: 800px;
+  height: 650px;
   padding: 16px;
   background-color: #363534;
   border-top-left-radius: 45px;
   border-bottom-left-radius: 45px;
+  margin-bottom: 24px;
 }
 
 .basket {
   width: 100%;
   z-index: 3;
-  position: sticky;
-  top: 0;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -27,9 +29,32 @@ h3 {
 }
 .basket_card {
   width: 100%;
+  max-height: 300px;
   z-index: 3;
   background-color: #fdeadc;
   border-radius: 15px;
+  margin-bottom: 10px;
+
+  overflow: auto;
+}
+
+.basked_Plus_btn {
+  border: none;
+}
+.basked_Minus_btn {
+  border: none;
+}
+
+.btn_delivery {
+  z-index: 3;
+  width: 120px;
+  height: 32px;
+  background-color: #e76c1f;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 45px;
+  border: none;
   margin-bottom: 10px;
 }
 
@@ -115,4 +140,9 @@ h3 {
   border-radius: 45px;
   border: none;
   margin-bottom: 10px;
+}
+@media (max-width: 1068px) {
+  .basket_wrapper {
+    display: none;
+  }
 }

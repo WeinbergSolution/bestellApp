@@ -10,6 +10,18 @@ function init() {
   renderBasketItem();
 }
 
+function addToLocalStorage(index) {
+  const myJSON = JSON.stringify(costumOrder);
+  localStorage.setItem("costumOrder", myJSON);
+}
+
+function getFromLocalStorage() {
+  let myOrderArray = JSON.parse(localStorage.getItem("costumOrder"));
+  if (myOrderArray !== null) {
+    costumOrder = myOrderArray;
+  }
+}
+
 function renderSectionContent() {
   contentSectionRef.innerHTML = templateOrangeStripePizza();
   for (let index = 0; index < myDishes.length; index++) {
@@ -31,14 +43,29 @@ function renderSectionContent() {
       contentSectionRef.innerHTML += templateContentDishes(index);
     }
   }
+  for (let i = 0; i < costumOrder.length; i++) {
+    const mealBtnRef = document.getElementById(
+      "meal_card_btn" + costumOrder[i].myDishesIndex,
+    );
+    mealBtnRef.innerHTML = changeMealBtn(i);
+  }
 }
 
-function changeMealBtnOnClick(index) {
-  const mealBtnRef = document.getElementById("meal_card_btn" + index);
-  mealBtnRef.innerHTML = changeMealBtn();
-  addToCostumOrderArray(index);
-  addToLocalStorage(index);
-  renderBasketItem();
+function renderBasketItem() {
+  calculateTotalPrice();
+  const baskeItemsref = document.getElementById("basket_items");
+  basektCardRef.innerHTML = "";
+  baskeItemsref.innerHTML = "";
+  for (let index = 0; index < costumOrder.length; index++) {
+    basektCardRef.innerHTML += templateBasketItemCard(index);
+  }
+
+  console.log(localStorage.getItem("costumOrder"));
+
+  baskeItemsref.innerHTML = tamplateBasketItems(
+    totalPrice,
+    totalPricePlusDeleveryFee,
+  );
 }
 
 function addToCostumOrderArray(index) {
@@ -48,54 +75,65 @@ function addToCostumOrderArray(index) {
     "price": myDishes[index].price,
     "amount": myDishes[index].amount + 1,
     "combinePrice": myDishes[index].amount + 1 * myDishes[index].price,
+    "inBusket": true,
+    "myDishesIndex": index,
   };
   costumOrder.push(newDish);
-}
-
-function renderBasketItem() {
-  calculateTotalPrice();
-  const baskeItemsref = document.getElementById("basket_items");
-  basektCardRef.innerHTML = "";
-  baskeItemsref.innerHTML = "";
-
-  for (let index = 0; index < costumOrder.length; index++) {
-    basektCardRef.innerHTML += templateBasketItemCard(index);
-  }
-  baskeItemsref.innerHTML = tamplateBasketItems(
-    totalPrice,
-    totalPricePlusDeleveryFee,
-  );
-}
-
-function addToLocalStorage(index) {
-  const myJSON = JSON.stringify(costumOrder);
-  localStorage.setItem("costumOrder", myJSON);
-}
-
-function getFromLocalStorage() {
-  let myOrderArray = JSON.parse(localStorage.getItem("costumOrder"));
-  if (myOrderArray !== null) {
-    costumOrder = myOrderArray;
-  }
 }
 
 function calculateTotalPrice() {
   totalPrice = 0;
   for (let index = 0; index < costumOrder.length; index++) {
-    totalPrice += costumOrder[index].price;
+    totalPrice += costumOrder[index].combinePrice;
     console.log(totalPrice);
   }
   totalPricePlusDeleveryFee = totalPrice + 4.99;
-}
-
-function deleteF(index) {
-  costumOrder.splice;
 }
 
 function deleteCardItemBasket(index) {
   costumOrder.splice(index, 1);
   addToLocalStorage(index);
   renderBasketItem();
+  renderSectionContent();
 }
 
-function name(params) {}
+function changeMealBtnOnClick(index) {
+  const mealBtnRef = document.getElementById("meal_card_btn" + index);
+
+  mealBtnRef.innerHTML = changeMealBtn();
+  addToCostumOrderArray(index);
+  addToLocalStorage(index);
+  renderBasketItem();
+  renderSectionContent();
+}
+
+function changeAmountBtnOnClick(index) {
+  costumOrder[index].amount += +1;
+  costumOrder[index].combinePrice =
+    costumOrder[index].amount * costumOrder[index].price;
+  inBasektRef = document.getElementById(`addOne-${index}`).innerHTML =
+    "in Basket" + " " + costumOrder[index].amount;
+
+  addToLocalStorage(index);
+  renderBasketItem();
+}
+
+function lowerAmountBtnOnClick(index) {
+  costumOrder[index].amount += -1;
+  costumOrder[index].combinePrice =
+    costumOrder[index].amount * costumOrder[index].price;
+  inBasektRef = document.getElementById(`addOne-${index}`).innerHTML =
+    "in Basket" + " " + costumOrder[index].amount;
+  addToLocalStorage(index);
+  renderBasketItem();
+  if (costumOrder[index].amount == 0) {
+    deleteCardItemBasket(index);
+  }
+}
+
+function ChangeAmountContentSection(index) {
+  addOneRef = document.getElementById(`addOne-${index}`);
+  addOneRef.innerHTML = `in Basket ${costumOrder[index].amount}`;
+}
+
+function showBasketOnclick() {}

@@ -1,7 +1,10 @@
 /* Root*/
 
 .container {
-  max-width: 1440px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 22px;
+  width: 100%;
 }
 
 /* Header*/
@@ -115,47 +118,37 @@
   height: 60px;
   background-color: #e76c1f;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 20px;
 }
 
 .orange_stripe_img {
-  position: relative;
-  left: 170px;
-  bottom: 17px;
+  margin-bottom: 35px;
   object-fit: contain;
   z-index: 2;
-  width: 500px;
+  width: 300px;
   height: 146px;
   padding-bottom: 10px;
 }
 
 .orange_stripe_img_burger {
-  position: relative;
-  left: 170px;
-  bottom: 14px;
+  margin-bottom: 30px;
   object-fit: contain;
   z-index: 2;
-  width: 500px;
+  width: 300px;
   height: 140px;
   padding-bottom: 10px;
 }
 
 .orange_stripe_img_sald {
-  position: relative;
-  left: 170px;
-  bottom: 15px;
+  margin-bottom: 29px;
   object-fit: contain;
   z-index: 2;
-  width: 500px;
+  width: 300px;
   height: 140px;
   padding-bottom: 10px;
 }
 
 .orange_stripe_slogan {
-  position: relative;
-  left: 10px;
   z-index: 2;
   color: white;
   font-size: 40px;
@@ -197,9 +190,7 @@
 }
 
 .content {
-  width: 80%;
-  position: sticky;
-  top: 0;
+  width: 90%;
   display: flex;
   justify-content: flex-start;
   padding: 10px 10px 10px 10px;
@@ -254,8 +245,7 @@ h4 {
 
 .meal_card_content_btn {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .btn_add_to_basket {
@@ -288,14 +278,32 @@ h4 {
   font-size: 16px;
 }
 
+.Menu_bottom_wrapper {
+  z-index: 11;
+  display: none;
+  position: sticky;
+  bottom: 0;
+}
+
+.Menu_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #363534;
+  height: 78px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.Menu_bottom_img {
+  width: 30px;
+  height: 30px;
+}
+
 /* footer */
 
 .footer_wrapper {
-  background-image: url("./assets/img/footer_neu-removebg-preview.png");
-  object-fit: contain;
-  background-size: 500px;
-  background-position: 15%;
-  background-repeat: no-repeat;
   background-color: #e76c1f;
   height: 128px;
   display: flex;
@@ -315,4 +323,76 @@ h4 {
   align-items: center;
   color: white;
   font-weight: bold;
+}
+
+/* responsiv */
+
+@media (max-width: 1068px) {
+  .hero_text {
+    font-size: 16px;
+    text-align: center;
+  }
+  .orange_stripe {
+    display: flex;
+    justify-content: center;
+  }
+  .orange_stripe_slogan {
+    display: none;
+  }
+  .content_section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 0 0;
+  }
+  .content {
+    margin-left: 0;
+  }
+  .Menu_bottom_wrapper {
+    display: block;
+  }
+}
+
+@media (max-width: 623px) {
+  .header_wrapper_inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .hero_text {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .hero_content {
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .orange_stripe_img {
+    width: 250px;
+  }
+  .orange_stripe_img_burger {
+    width: 250px;
+  }
+  .orange_stripe_img_sald {
+    width: 250px;
+  }
+  .content {
+    display: block;
+    justify-content: flex-start;
+  }
+
+  h4 {
+    font-size: 19px;
+  }
+  .footer_content {
+    padding-top: 10px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

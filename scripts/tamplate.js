@@ -2,9 +2,9 @@
 
 function templateOrangeStripeBürger() {
   return `
-   <section>
+   
     <div class="burger_section">
-  <div class="orange_stripe">
+  <div class="orange_stripe ">
     <img class="orange_stripe_img_burger" src="./assets/img/banner_burger-removebg-preview.png" alt="bürger icon">
     <span class="orange_stripe_slogan" >Burger & Sandwiches</span>
   </div>
@@ -13,12 +13,12 @@ function templateOrangeStripeBürger() {
 
 function templateOrangeStripeSald() {
   return `
-   <section>
+   
     <div class="salad_section">
   <div class="orange_stripe">
     <img class="orange_stripe_img_sald" src="./assets/img/sald_banner-removebg-preview.png" alt="bürger icon">
-    <span class="orange_stripe_slogan" >Salad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="orange_stripe_slogan" >Salad
+      
     </span>
   </div>
 </div>
@@ -27,12 +27,12 @@ function templateOrangeStripeSald() {
 
 function templateOrangeStripePizza() {
   return `
-    <section>
+    
         <div class="pizza_section">
             <div class="orange_stripe">
                 <img class="orange_stripe_img" src="./assets/img/banner_pizza-removebg-preview.png" alt="bürger icon">
                 <span class="orange_stripe_slogan" >Pizza  (30cm)
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </span>
             </div>
         </div>
         
@@ -41,9 +41,9 @@ function templateOrangeStripePizza() {
 
 function templateContentDishes(index) {
   return `
-    <div class="content">
+    <div class="content ">
             <img class="meal_card_img" src="${myDishes[index].path}" alt="Bürger Bild Veggi">
-            <div class="meal_card_content">
+            <div class="meal_card_content ">
               <div class="meal_card_content_left">
                 <h4>${myDishes[index].name}</h4>
                 <span class="meal_card_content_left_span">${myDishes[index].description}</span>
@@ -60,7 +60,7 @@ function templateContentDishes(index) {
               </div>
             </div>
         </div>
-      </section>
+      
     `;
 }
 
@@ -73,10 +73,11 @@ function templateBasketItemCard(index) {
             <div class="basket_icon_price">
               <div class="basked_delet">
                 <img onclick="deleteCardItemBasket(${index})" src="./assets/icons/delete.svg" alt="delete button">
-                <span>1</span>
-                 <span>+</span>
+                <span>${costumOrder[index].amount}</span>
+                 <button  class="basked_Plus_btn" onclick="changeAmountBtnOnClick(${index})">+</button>
+                 <button  class="basked_Minus_btn" onclick="lowerAmountBtnOnClick(${index})">-</button>
               </div>
-              <span>${costumOrder[index].price}</span>
+              <span>${costumOrder[index].combinePrice}</span>
             </div>
              
           
@@ -111,9 +112,10 @@ function tamplateBasketItems(totalPrice, totalPricePlusDeleveryFee) {
     `;
 }
 
-function changeMealBtn() {
+function changeMealBtn(i) {
   return `
-    <button id="addOne" class="btn">Added 1</button>
-                  <button class="btn_plus">+</button>
+    <button id="addOne-${i}" class="btn">in Basket 1</button>
+                 <button onclick="changeAmountBtnOnClick(${i})"  class="btn_plus" >+</button>
+            
     `;
 }
