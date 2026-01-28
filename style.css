@@ -57,6 +57,7 @@
   font-size: 48px;
 }
 .slogan_black {
+  font-weight: bold;
   color: black;
   font-size: 48px;
 }
@@ -111,16 +112,16 @@
   margin-top: 30px;
 }
 .orange_stripe {
+  margin-left: 7px;
   padding-top: 20px;
   padding-bottom: 20px;
   z-index: 2;
-  width: 100vw;
+  width: calc(100vw - 22px);
   height: 60px;
   background-color: #e76c1f;
   display: flex;
   align-items: center;
 }
-
 .orange_stripe_img {
   margin-bottom: 35px;
   object-fit: contain;
@@ -249,6 +250,7 @@ h4 {
 }
 
 .btn_add_to_basket {
+  cursor: pointer;
   width: 115px;
   height: 30px;
   background-color: white;
@@ -261,6 +263,7 @@ h4 {
 }
 
 .btn {
+  cursor: pointer;
   background-color: white;
   border-radius: 45px;
   border: none;
@@ -270,6 +273,7 @@ h4 {
 }
 
 .btn_plus {
+  cursor: pointer;
   background-color: white;
   border: none;
   padding: 5px 5px 5px 5px;
