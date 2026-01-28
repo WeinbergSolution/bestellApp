@@ -41,7 +41,8 @@ function templateOrangeStripePizza() {
 
 function templateContentDishes(index) {
   return `
-    <div class="content ">
+  
+    <div class="content">
             <img class="meal_card_img" src="${myDishes[index].path}" alt="Bürger Bild Veggi">
             <div class="meal_card_content ">
               <div class="meal_card_content_left">
@@ -62,6 +63,29 @@ function templateContentDishes(index) {
         </div>
       
     `;
+}
+
+function templateBasketHead() {
+  return `
+  <h3>Your Basket</h3>
+          <span class="basket_emty">Nothing here yet.
+            Go ahead and choose something delicious!</span>
+          <img class="basket_img" src="./assets/icons/basket1.svg" alt="">
+          <div>
+          <button onclick="changeDeliveryFee()" class="btn_delivery">Lieferung</button>
+          <button onclick="changeDeliveryFee()" class="btn_delivery">Abholung</button>
+  `;
+}
+function templateBasketHeadNone() {
+  return `
+  <h3>Your Basket</h3>
+          <span class="basket_emty_none">Nothing here yet.
+            Go ahead and choose something delicious!</span>
+          <img class="basket_img_none" src="./assets/icons/basket1.svg" alt="">
+          <div>
+          <button onclick="changeDeliveryFee()" class="btn_delivery">Lieferung</button>
+          <button onclick="changeDeliveryFee()" class="btn_delivery">Abholung</button>
+  `;
 }
 
 function templateBasketItemCard(index) {
@@ -98,7 +122,7 @@ function tamplateBasketItems(totalPrice, totalPricePlusDeleveryFee) {
           </div>
           <div class="busket_delivery_fee">
           <span>Delivery free</span>
-            <span>4.99$</span>
+            <span>${deleveryFee}</span>
             </div>
             <hr class="line">
             <div class="busket_total_price">
@@ -106,7 +130,7 @@ function tamplateBasketItems(totalPrice, totalPricePlusDeleveryFee) {
               <span>${totalPricePlusDeleveryFee.toFixed(2)}</span>
             </div>
             <div class="busket_buy_now">
-              <button class="btn_buy_now">Buy now (${totalPricePlusDeleveryFee.toFixed(2)})</button>
+              <button onclick="openOrderDialog()" class="btn_buy_now">Buy now (${totalPricePlusDeleveryFee.toFixed(2)})</button>
             </div>
           </div>
     `;
@@ -118,4 +142,49 @@ function changeMealBtn(i) {
                  <button onclick="changeAmountBtnOnClick(${i})"  class="btn_plus" >+</button>
             
     `;
+}
+
+function templateOrderDeny() {
+  return `
+  <dialog class="dialog" id="order_dialog">
+  <div class="dialog_wrapper">
+    <header class="dialog_header">
+      <h3>Nothing here yet.
+            </h3>
+    </header>
+
+    <section class="dialog_section">
+    <img src="./assets/icons/basket1.svg" alt="deliver car icon">
+      <p>Go ahead and choose something delicious!</p>
+      
+    </section>
+
+    <footer class="dialog_footer">
+      <button onclick="closeOrderDialog()">OK</button>
+    </footer>
+  </div>
+</dialog>
+  `;
+}
+
+function templateOrderAcepted() {
+  return `
+  <dialog class="dialog" id="order_dialog">
+  <div class="dialog_wrapper">
+    <header class="dialog_header">
+      <h3>Bestellung abgeschlossen</h3>
+    </header>
+
+    <section class="dialog_section">
+    <img src="./assets/icons/car_order_on_the_way.svg" alt="deliver car icon">
+      <p>Danke für Ihre Bestellung</p>
+      
+    </section>
+
+    <footer class="dialog_footer">
+      <button onclick="closeOrderDialog()">OK</button>
+    </footer>
+  </div>
+</dialog>
+  `;
 }
