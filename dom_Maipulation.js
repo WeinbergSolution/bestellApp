@@ -227,6 +227,15 @@ function openOrderDialog() {
   } else {
     if (!document.getElementById("order_dialog")) {
       document.body.insertAdjacentHTML("beforeend", templateOrderAcepted());
+      console.log(costumOrder);
+      for (let index = 0; index < costumOrder.length; index++) {
+        costumOrder.splice(index, 1);
+        console.log(costumOrder);
+      }
+      addToLocalStorage();
+      renderBasketHead();
+      renderBasketItem();
+      renderSectionContent();
     }
   }
 
