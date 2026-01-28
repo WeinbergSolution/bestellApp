@@ -67,7 +67,7 @@ function showBasketOnclick() {
   toggleBasketModal();
 }
 
-function addToLocalStorage(index) {
+function addToLocalStorage() {
   const myJSON = JSON.stringify(costumOrder);
   localStorage.setItem("costumOrder", myJSON);
 }
@@ -158,7 +158,7 @@ function calculateTotalPrice() {
 
 function deleteCardItemBasket(index) {
   costumOrder.splice(index, 1);
-  addToLocalStorage(index);
+  addToLocalStorage();
   renderBasketHead();
   renderBasketItem();
   renderSectionContent();
@@ -169,7 +169,7 @@ function changeMealBtnOnClick(index) {
   addToCostumOrderArray(index);
   const orderIndex = costumOrder.length - 1;
   mealBtnRef.innerHTML = changeMealBtn(orderIndex);
-  addToLocalStorage(index);
+  addToLocalStorage();
   renderBasketHead();
   renderBasketItem();
   renderSectionContent();
@@ -183,7 +183,7 @@ function changeAmountBtnOnClick(index) {
   document.getElementById(`addOne-${index}`).innerHTML =
     "in Basket" + " " + costumOrder[index].amount;
 
-  addToLocalStorage(index);
+  addToLocalStorage();
 
   renderBasketItem();
 }
@@ -196,7 +196,7 @@ function lowerAmountBtnOnClick(index) {
   document.getElementById(`addOne-${index}`).innerHTML =
     "in Basket" + " " + costumOrder[index].amount;
 
-  addToLocalStorage(index);
+  addToLocalStorage();
 
   renderBasketItem();
 
@@ -227,15 +227,16 @@ function openOrderDialog() {
   } else {
     if (!document.getElementById("order_dialog")) {
       document.body.insertAdjacentHTML("beforeend", templateOrderAcepted());
+
+      costumOrder = [];
       console.log(costumOrder);
-      for (let index = 0; index < costumOrder.length; index++) {
-        costumOrder.splice(index, 1);
-        console.log(costumOrder);
-      }
       addToLocalStorage();
       renderBasketHead();
+      console.log(costumOrder);
       renderBasketItem();
+      console.log(costumOrder);
       renderSectionContent();
+      console.log(costumOrder);
     }
   }
 
