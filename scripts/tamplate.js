@@ -138,10 +138,9 @@ function tamplateBasketItems(totalPrice, totalPricePlusDeleveryFee) {
 
 function changeMealBtn(i) {
   return `
-    <button id="addOne-${i}" class="btn">in Basket 1</button>
-                 <button onclick="changeAmountBtnOnClick(${i})"  class="btn_plus" >+</button>
-            
-    `;
+    <button id="addOne-${i}" class="btn">in Basket ${costumOrder[i].amount}</button>
+    <button onclick="changeAmountBtnOnClick(${i})" class="btn_plus">+</button>
+  `;
 }
 
 function templateOrderDeny() {

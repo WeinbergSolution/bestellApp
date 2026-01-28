@@ -166,9 +166,9 @@ function deleteCardItemBasket(index) {
 
 function changeMealBtnOnClick(index) {
   const mealBtnRef = document.getElementById("meal_card_btn" + index);
-
-  mealBtnRef.innerHTML = changeMealBtn();
   addToCostumOrderArray(index);
+  const orderIndex = costumOrder.length - 1;
+  mealBtnRef.innerHTML = changeMealBtn(orderIndex);
   addToLocalStorage(index);
   renderBasketHead();
   renderBasketItem();
